@@ -11,7 +11,7 @@ public interface LokaalService {
      * @return
      */
     public int processLokaal(Lokalen lokaal);
-    public void deleteLokaal(Lokalen lokaal);
-    public Lokalen getDetailsLokaal(Lokalen lokaal);
+    public void deleteLokaal(int id);
+    public Lokalen getDetailsLokaal(int id);
     public List<Lokalen> getAllLokalen();
 }
