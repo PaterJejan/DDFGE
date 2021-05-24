@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.ws.rs.core.Response;
 
 @RestController
-//@CrossOrigin(origins = "http://localhost:8888", maxAge = 3600, allowCredentials = "true")
+@CrossOrigin(origins = "*", maxAge = 3600, allowCredentials = "true")//voorlopig all
 public class PersoonController {
 
     @Autowired

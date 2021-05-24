@@ -11,7 +11,7 @@ import javax.ws.rs.core.Response;
 import java.util.List;
 
 @RestController
-//@CrossOrigin(origins = "http://localhost:8888", maxAge = 3600, allowCredentials = "true")
+@CrossOrigin(origins = "*", maxAge = 3600, allowCredentials = "true")//voorlopig all
 public class ReservatieController {
     @Autowired
     ReservatieService service;
@@ -21,6 +21,19 @@ public class ReservatieController {
     public void createReservatie(@RequestBody Reservatie reservatie){
         service.processReservatie(reservatie);
     }
+
+    @RequestMapping(path = "updateReservatie"/*, method = RequestMethod.POST*/)
+    @ResponseStatus(HttpStatus.CREATED)
+    public Response updateReservatie(@RequestBody Reservatie reservatie){
+        if (reservatie.getId() != 0){
+            service.processReservatie(reservatie);
+            return Response.status(200).encoding("Reservatie updated").build();
+        }
+        else{
+            return Response.status(404).encoding("Reservatie not found").build();
+        }
+    }
+
 
     @RequestMapping (path = "deleteReservatie/{id}"/*, method = RequestMethod.DELETE*/)
     @ResponseStatus(HttpStatus.NO_CONTENT)

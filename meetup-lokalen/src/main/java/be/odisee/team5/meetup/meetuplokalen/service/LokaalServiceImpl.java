@@ -3,9 +3,10 @@ package be.odisee.team5.meetup.meetuplokalen.service;
 import be.odisee.team5.meetup.meetuplokalen.dao.LokaalRepository;
 import be.odisee.team5.meetup.meetuplokalen.domain.Lokalen;
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.stereotype.Service;
 import java.util.List;
 
+@Service
 public class LokaalServiceImpl implements LokaalService{
 
     @Autowired
