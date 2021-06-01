@@ -11,7 +11,7 @@ import javax.ws.rs.core.Response;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "*", maxAge = 3600, allowCredentials = "true")//voorlopig all
+@CrossOrigin(maxAge = 3600)
 public class LokaalController {
     @Autowired
     LokaalService service;
