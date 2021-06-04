@@ -42,4 +42,19 @@ public class PersoonServiceImpl implements PersoonService {
             throw new NotFoundException("Persoon met $id niet gevonden");
         }
     }
+
+    @Override
+    public int getIdByGebruikersnaam(String gebuikersnaam) {
+        return persoonRepo.findByGebruikersnaam(gebuikersnaam).getId();
+    }
+
+    @Override
+    public void updatePersoon(Persoon persoon) {
+        Persoon entity = persoonRepo.findById(persoon.getId());
+        //mapping of object
+        entity.setWachtwoord(persoon.getWachtwoord());
+        entity.setRol(persoon.getRol());
+        //saving
+        persoonRepo.save(entity);
+    }
 }

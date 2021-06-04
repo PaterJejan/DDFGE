@@ -16,13 +16,20 @@ public class PersoonController {
     @Autowired
     PersoonService persoonService;
 
-    @RequestMapping (path = "createPersoon"/*, method = RequestMethod.POST*/)
+    @RequestMapping (path = "createPersoon", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
-    public void createPersoon(@RequestBody Persoon persoon){
-        persoonService.createPerson(persoon);
+    public int createPersoon(@RequestBody Persoon persoon){
+        persoonService.createPerson(persoon) ;
+        return  persoon.getId();
     }
 
-    @RequestMapping (path = "deletePersoon/{id}"/*, method = RequestMethod.DELETE*/)
+    @RequestMapping (path = "updatePersoon", method = RequestMethod.PUT)
+    @ResponseStatus(HttpStatus.CREATED)
+    public void updatePersoon(@RequestBody Persoon persoon){
+        persoonService.updatePersoon(persoon);
+    }
+
+    @RequestMapping (path = "deletePersoon/{id}", method = RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public Response delete(@PathVariable("id") Integer id)  {
         try{
@@ -40,7 +47,11 @@ public class PersoonController {
     }
 
     @RequestMapping (path = "login/{wachtwoord}/{gebruikersnaam}", method = RequestMethod.GET)
-    public Boolean  checkcredentials(@PathVariable("wachtwoord") String wachtwoord, @PathVariable("gebruikersnaam") String gebruikersnaam){
-        return persoonService.checkCredentials(wachtwoord, gebruikersnaam);
+    public int  checkcredentials(@PathVariable("wachtwoord") String wachtwoord, @PathVariable("gebruikersnaam") String gebruikersnaam){
+        if (persoonService.checkCredentials(wachtwoord, gebruikersnaam)){
+            return persoonService.getIdByGebruikersnaam(gebruikersnaam);
+        }
+        else
+            return 0;
     }
 }

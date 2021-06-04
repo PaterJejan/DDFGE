@@ -16,13 +16,13 @@ public class ReservatieController {
     @Autowired
     ReservatieService service;
 
-    @RequestMapping(path = "createReservatie"/*, method = RequestMethod.POST*/)
+    @RequestMapping(path = "createReservatie", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public void createReservatie(@RequestBody Reservatie reservatie){
         service.processReservatie(reservatie);
     }
 
-    @RequestMapping(path = "updateReservatie"/*, method = RequestMethod.POST*/)
+    @RequestMapping(path = "updateReservatie", method = RequestMethod.PUT)
     @ResponseStatus(HttpStatus.CREATED)
     public Response updateReservatie(@RequestBody Reservatie reservatie){
         if (reservatie.getId() != 0){
@@ -35,7 +35,7 @@ public class ReservatieController {
     }
 
 
-    @RequestMapping (path = "deleteReservatie/{id}"/*, method = RequestMethod.DELETE*/)
+    @RequestMapping (path = "deleteReservatie/{id}", method = RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public Response delete(@PathVariable("id") Integer id)  {
         try{

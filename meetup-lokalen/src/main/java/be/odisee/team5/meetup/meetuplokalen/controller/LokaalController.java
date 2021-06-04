@@ -16,13 +16,13 @@ public class LokaalController {
     @Autowired
     LokaalService service;
 
-    @RequestMapping(path = "createLokaal"/*, method = RequestMethod.POST*/)
+    @RequestMapping(path = "createLokaal", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public void createReservatie(@RequestBody Lokalen lokalen){
         service.processLokaal(lokalen);
     }
 
-    @RequestMapping (path = "deleteLokaal/{id}"/*, method = RequestMethod.DELETE*/)
+    @RequestMapping (path = "deleteLokaal/{id}", method = RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public Response delete(@PathVariable("id") Integer id)  {
         try{
@@ -34,7 +34,7 @@ public class LokaalController {
         }
     }
 
-    @RequestMapping(path = "updateLokaal"/*, method = RequestMethod.POST*/)
+    @RequestMapping(path = "updateLokaal", method = RequestMethod.PUT)
     @ResponseStatus(HttpStatus.CREATED)
     public Response updateReservatie(@RequestBody Lokalen lokalen){
         if (lokalen.getId() != 0){
