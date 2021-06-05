@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/DDFGE.iml" filepath="$PROJECT_DIR$/.idea/DDFGE.iml" />
+      <module fileurl="file://$PROJECT_DIR$/meetup-login/meetup-login.iml" filepath="$PROJECT_DIR$/meetup-login/meetup-login.iml" />
+      <module fileurl="file://$PROJECT_DIR$/meetup-lokalen/meetup-lokalen.iml" filepath="$PROJECT_DIR$/meetup-lokalen/meetup-lokalen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/meetup-reservaties/meetup-reservaties.iml" filepath="$PROJECT_DIR$/meetup-reservaties/meetup-reservaties.iml" />
+    </modules>
+  </component>
+</project>

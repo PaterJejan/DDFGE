@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="meetup-reservaties" />
+        <module name="meetup-login" />
+        <module name="meetup-lokalen" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="meetup-login" target="16" />
+      <module name="meetup-lokalen" target="16" />
+      <module name="meetup-reservaties" target="16" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="meetup-login" options="-parameters" />
+      <module name="meetup-lokalen" options="-parameters" />
+      <module name="meetup-reservaties" options="-parameters" />
+    </option>
+  </component>
+</project>
