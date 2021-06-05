@@ -1,0 +1,25 @@
+server:
+  port: 8082
+spring:
+  datasource:
+    password: admin
+    username: admin
+    url: jdbc:h2:file:~/mulok;INIT=CREATE SCHEMA IF NOT EXISTS LOKALEN
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database-platform: org.hibernate.dialect.H2Dialect
+
+  h2:
+    console:
+      enabled: true
+      path: /h2
+
+  security:
+    user:
+      name: lokalen
+      password: admin
+    hibernate:
+      current_session_context_class: org.springframework.orm.hibernate4.SpringSessionContext
+      dialect: org.hibernate.dialect.MySQL5InnoDBDialect
