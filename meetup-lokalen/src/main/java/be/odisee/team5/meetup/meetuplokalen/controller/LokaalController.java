@@ -56,3 +56,8 @@ public class LokaalController {
         return service.getAllLokalen();
     }
 }
+
+
+
+
+

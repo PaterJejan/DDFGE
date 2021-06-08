@@ -16,3 +16,6 @@ public interface ReservatieService {
     public Reservatie getDetailsReservatie(int id);
     public List<Reservatie> getAllReservaties();
 }
+
+
+
